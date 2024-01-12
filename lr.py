@@ -17,8 +17,8 @@ def draw(tau):
 
 X = np.linspace(-3, 3, num=1000)
 domain = X
-Y = np.log(np.abs(X ** 2 - 1) + .5)
-
+Y = np.log(np.abs(X ** 2 - 1) + .5) # W shape curve
+#Y = np.abs(X**2) # y=|x**2| curve
 
 draw(10)
 draw(0.1)
