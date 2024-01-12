@@ -11,8 +11,17 @@ def loadcsv(filename):
 def splitDataset(dataset, splitRatio):
     trainSize = int(len(dataset) * splitRatio)
     trainSet = []
+    #'''
+    copy = list(dataset)
+    while len(trainSet) < trainSize:
+        # generate indices for the dataset list randomly to pick ele for training data
+        index = random.randrange(len(copy))
+        trainSet.append(copy.pop(index))
+    return [trainSet, copy]
+    '''
     trainSet,testSet = dataset[:trainSize],dataset[trainSize:]
     return [trainSet, testSet]
+    '''
 
 def mean(numbers):
     return sum(numbers)/(len(numbers))
